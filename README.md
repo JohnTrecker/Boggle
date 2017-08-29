@@ -1,4 +1,4 @@
-![Logo of the project](https://greatbooksblog.files.wordpress.com/2009/12/adlersmile.jpg?w=240&h=300)
+![Logo of the project](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Boggle.jpg/330px-Boggle.jpg)
 
 # Boggle
 > The Parker Brothers hit classic that changed gaming forever. Now in vanilla JS!
