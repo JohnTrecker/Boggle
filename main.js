@@ -2,32 +2,30 @@
 
 // state management
 let state = {}
-let dice = ['aaafrs','aaeeee','aafirs','adennn','aeeeem','aeegmu','aegmnn','afirsy','bjkqxz','ccenst','ceiilt','ceilpt','ceipst','ddhnot','dhhlor','dhlnor','dhlnor','eiiitt','emottt','ensssu','fiprsy','gorrvw','iprrry','nootuw'];
+let dice = ['aaafrs','aaeeee','aafirs','adennn','aeeeem','aeegmu','aegmnn','afirsy','bjkqxz','ccenst','ceiilt','ceilpt','ceipst','ddhnot','dhhlor','dhlnor','dhlnor','eiiitt','emottt','ensssu','fiprsy','gorrvw','iprrry','nootuw', 'ooottu'];
 
 const getDice = () => {
-  let board = []
-  let i = 5; while (i--) {
-    let index = Math.floor(Math.random() * dice.length);
-    let die = dice.slice(index, index + 1)[0]
-    board.push(die)
-  }
-  return board
+  const random = (set) => Math.floor(Math.random() * set.length);
+  const randomDie = () => dice.splice(random(dice), 1)[0];
+  const randomSide = (die) => die[random(die)];
+
+  return [...Array(25)].reduce( (board) => {
+    return board.concat( randomSide( randomDie() ))
+  }, [])
 }
 
 const loadDice = () => {
   let gameboard = document.getElementById('gameboard')
   let count = 1
-  getDice().forEach( (die) => {
-    die.split('').forEach( letter => {
+  getDice().forEach( letter => {
 
-      let el = document.createElement('div')
-      el.classList.add('Grid-cell')
-      el.innerHTML = letter === 'q' ? 'Qu' : letter.toUpperCase()
-      el.id = count++
-      // TODO: add click event listener
-      gameboard.appendChild(el)
+    let el = document.createElement('div')
+    el.classList.add('Grid-cell')
+    el.innerHTML = letter === 'q' ? 'Qu' : letter.toUpperCase()
+    el.id = count++
+    // TODO: add click event listener
+    gameboard.appendChild(el)
 
-    })
   })
 }
 
