@@ -7,13 +7,62 @@
   <title>Boggle</title>
 </head>
 <body>
-  <div class="container">
-    <img class="logo" src="./assets/logo.png"></img>
+  <div class="container1">
 
-    <div class="container2">
-      <div class="gameboard"></div>
-      <div class="current"></div>
-      <table class="scoreboard"></table>
+    <div class="content container2">
+      <img class="logo" src="./assets/logo.png"></img>
+    </div>
+
+    <div class="content container3">
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+      <div class="Grid-cell">…</div>
+    </div>
+
+    <div class="content container4">
+      <div class="current">
+        <span class="static">Current Word: </span>
+        <span id="curent-val" class="dynamic"></span>
+      </div>
+      <button class="submit">Submit Word</button>
+      <div class="container5">
+        <table class="scoreboard">
+          <tr>
+            <th>Word</th>
+            <th>Score</th>
+          </tr>
+          <tr class="history">
+            <td>...</td>
+            <td>...</td>
+          </tr>
+          <tr class="total">
+            <td>Total</td>
+            <td id="total-val">0</td>
+          </tr>
+        </table>
+      </div>
     </div>
 
   </div>
