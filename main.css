@@ -111,12 +111,15 @@ img.logo{
 .Grid-cell {
   width: 15%;
   height: 15%;
+  max-height: 12%;
+  max-width: 12%;
   margin: 2%;
 
   display: inherit;
   justify-content: center;
   align-items: center;
 
+  cursor: pointer;
   border-radius: 5px;
   background-color: #FFFFFF;
 
