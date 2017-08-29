@@ -1,7 +1,7 @@
 ![Logo of the project](https://greatbooksblog.files.wordpress.com/2009/12/adlersmile.jpg?w=240&h=300)
 
 # Boggle
-> Boggle web app in vanilla JS
+> The Parker Brothers hit classic that changed gaming forever. Now in vanilla JS!
 
 Beat the high score of 0!
 ## Installing / Getting started
