@@ -1,9 +1,9 @@
 ![Logo of the project](https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Boggle.jpg/330px-Boggle.jpg)
 
 # Boggle
-> The Parker Brothers hit classic that changed gaming forever. Now in vanilla JS!
+> The Parker Brothers classic in vanilla JS.
 
-Beat the high score of 0!
+Beat the high score of 0.
 ## Installing / Getting started
 
 ```shell
