@@ -101,18 +101,19 @@ img.logo{
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  align-content: center;
+  /*align-content: center;*/
   text-align: center;
 
   box-sizing: border-box;
   background-color: #398BD4;
   border: 5px solid #FFCA08;
 }
-.Grid-cell {
+.grid-cell {
   width: 15%;
   height: 15%;
-  max-height: 12%;
-  max-width: 12%;
+  /* TODO: Style precisely */
+  max-height: 15%;
+  max-width: 15%;
   margin: 2%;
 
   display: inherit;
@@ -126,6 +127,9 @@ img.logo{
   -webkit-box-shadow: -5px 5px 5px 0 rgba(79,79,143,1);
   -moz-box-shadow: -5px 5px 5px 0 rgba(79,79,143,1);
   box-shadow: -5px 5px 5px 0 rgba(79,79,143,1);
+}
+.grid-cell.active {
+  background-color: #ACCEEC;
 }
 
 /* SCOREBOARD */
