@@ -101,10 +101,10 @@ img.logo{
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  /*align-content: center;*/
   text-align: center;
 
   box-sizing: border-box;
+  margin-bottom: 15px;
   background-color: #398BD4;
   border: 5px solid #FFCA08;
 }
@@ -120,6 +120,7 @@ img.logo{
   justify-content: center;
   align-items: center;
 
+  font: 20px bolder arial;
   cursor: pointer;
   border-radius: 5px;
   background-color: #FFFFFF;
@@ -165,6 +166,7 @@ img.logo{
 div.container5 {
   height: 80%;
   width: 100%;
+  margin: 15px 0;
   overflow-y: auto;
 }
 table, th, td, tr {
@@ -182,10 +184,13 @@ table {
   max-height: 100%;
   margin-top: 3px;
 }
+tbody {
+  /*overflow-y: auto;*/
+}
 th, tr.total {
   font-weight: bold;
 }
-tr.total td {
+tr.total th {
   background-color: #ACCEEC;
 }
 
