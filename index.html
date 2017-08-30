@@ -25,18 +25,16 @@
       <button id="submit" class="submit">Submit Word</button>
       <div class="container5">
         <table class="scoreboard">
-          <tr>
-            <th>Word</th>
-            <th>Score</th>
-          </tr>
-          <tr class="history">
-            <td>...</td>
-            <td>...</td>
-          </tr>
-          <tr class="total">
-            <td>Total</td>
-            <td id="total-val">0</td>
-          </tr>
+          <tbody id="scoreboard-parent">
+            <tr id="scoreboard">
+              <th>Word</th>
+              <th>Score</th>
+            </tr>
+            <tr id="scoreboard-child" class="total">
+              <td>Total</td>
+              <td id="total-val">0</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </div>

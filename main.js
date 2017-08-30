@@ -38,6 +38,7 @@ class LinkedList {
     if (this.head === null) return null;
     let currentHead = this.head;
     this.head = null;
+    this.tail = null;
   }
 
   getList() {
@@ -51,7 +52,6 @@ class LinkedList {
     return string;
   }
 };
-
 
 let state = new LinkedList();
 
