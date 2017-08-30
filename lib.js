@@ -16,40 +16,47 @@ const loadDice = () => {
   })
 }
 
-const isAdjacent = (element, tail) => {
-  const test = [-6,-5,-4,-1,1,4,5,6] // 8 possible adjacent positions based on 25 sequential dice values
-  return test.some((num) => (num + element) === tail ? true : false)
+const initialize = () => {
+  loadDice()
 }
 
-const createElement = (string, id) => {
+const isAdjacent = (element, tail) => {
+  element = parseInt(element,10)
+  tail = parseInt(tail,10)
+
+  const test = [-6,-5,-4,-1,1,4,5,6] // 8 possible adjacent positions based on 25 sequential dice values
+  return test.some((num) => {
+    let sum = num + element
+    return sum === tail ? true : false
+  })
+}
+
+let createElement = (string, id) => {
   let gameboard = document.getElementById('gameboard')
-  let currentWord = document.getElementById('current-val').innerHTML
   let el = document.createElement('div')
+  const activate = () => el.classList.add('active')
+  const deactivate = () => el.classList.remove('active')
 
   el.classList.add('grid-cell')
   el.innerHTML = string === 'q' ? 'Qu' : string.toUpperCase()
   el.id = ++id
 
   el.addEventListener('click', () => {
-    if (el.classList.contains('active')) el.classList.remove('active')
-    else el.classList.add('active')
 
-    if (!state.tail) state.addToTail( el.innerHTML, el.id )
-    // if (el.id === state.tail.id) state.removeTail()
-    else if ( isAdjacent(el.id, state.tail.id) ) {
+    if (!state.tail || isAdjacent(el.id, state.tail.id)) {
       state.addToTail( el.innerHTML, el.id )
+      activate()
+    } else if (el.id === state.tail.id) {
+      state.removeTail()
+      if (!state.tail) state.removeHead()
+      deactivate()
     }
 
     let word = state.getList()
-    console.log(word)
-    document.getElementById('current-val').innerHTML = word;
-  })
+    document.getElementById('current-val').innerHTML = word
+  }, false)
 
   gameboard.appendChild(el)
-}
-
-const initialize = () => {
-  loadDice()
 }
 
 // class Word {
