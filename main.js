@@ -1,48 +1,61 @@
 'use strict';
 
-// state management
-let state = {}
-let dice = ['aaafrs','aaeeee','aafirs','adennn','aeeeem','aeegmu','aegmnn','afirsy','bjkqxz','ccenst','ceiilt','ceilpt','ceipst','ddhnot','dhhlor','dhlnor','dhlnor','eiiitt','emottt','ensssu','fiprsy','gorrvw','iprrry','nootuw', 'ooottu'];
+class Node {
+  constructor(value, id){
+    this.value = value
+    this.id = id
+    this.prev = null;
+    this.next = null;
+  }
+};
 
-const getDice = () => {
-  const random = (set) => Math.floor(Math.random() * set.length);
-  const randomDie = () => dice.splice(random(dice), 1)[0];
-  const randomSide = (die) => die[random(die)];
+class LinkedList {
+  constructor(head, tail) {
+    this.head = null;
+    this.tail = null;
+  }
 
-  return [...Array(25)].reduce( (board) => {
-    return board.concat( randomSide( randomDie() ))
-  }, [])
-}
+  addToTail(value, id) {
+    // console.log('value: ', value, 'id: ', id)
+    let newTail = new Node(value, id);
+    // console.log('new Node:', newTail)
+    if (!this.head) {
+      this.head = newTail;
+      // console.log('new head: ', this.head)
+    }
+    if (this.tail) {
+      newTail.prev = this.tail
+      this.tail.next = newTail;
+      // console.log('old tail: ', this.tail)
+    }
 
-const loadDice = () => {
-  let gameboard = document.getElementById('gameboard')
-  let count = 1
-  getDice().forEach( letter => {
+    this.tail = newTail;
+    // console.log('new tail: ', this.tail)
 
-    let el = document.createElement('div')
-    el.classList.add('Grid-cell')
-    el.innerHTML = letter === 'q' ? 'Qu' : letter.toUpperCase()
-    el.id = count++
-    // TODO: add click event listener
-    gameboard.appendChild(el)
+  }
 
-  })
-}
+  removeTail() {
+    if (this.tail === null) return null;
+    let currentTail = this.tail;
+    this.tail = this.tail.prev;
 
-document.addEventListener('DOMContentLoaded', loadDice)
+    return currentTail.value;
+  }
 
-// el.addEventListener('click', state.current.handleClick, false)
+  getList() {
+    let string = ''
+    let node = this.head;
+    while (node) {
+      string = string.concat(node.value)
+      node = node.next;
+    }
 
-// class Word {
-//   constructor() {
-//     this.value = '';
-//     this.head = null;
-//     this.tail = null;
-//   }
-//   handleClick(e) {
-//     console.log('button pressed: ', e.target)
-//   }
-// }
+    return string;
+  }
+};
 
-// let currentWord = document.getElementById('curent-val')
-// document.o
+
+let state = new LinkedList();
+
+// Load DOM
+document.addEventListener('DOMContentLoaded', initialize)
