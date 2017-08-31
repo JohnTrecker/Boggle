@@ -157,11 +157,12 @@ img.logo{
 .submit {
   position: absolute;
   right: 0;
-
+  background-color: ghostwhite;
   outline: none;
+  border: none;
   max-height: 20%;
   width: auto;
-  border-radius: 2px;
+  border-radius: 4px;
   font-size: 15px;
 }
 div.container5 {
