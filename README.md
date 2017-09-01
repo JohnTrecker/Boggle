@@ -6,6 +6,9 @@
 Beat the high score of 0.
 ## Installing / Getting started
 
+http://boggle.now.sh
+
+OR
 ```shell
 git clone https://github.com/JohnTrecker/Boggle.git
 cd boggle
